@@ -1,0 +1,12 @@
+services:
+  backend:
+    build: ./demo
+    ports:
+      - "8083:8083"
+
+  frontend:
+    build: ./project-vue
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
